@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pixel-art-tool/static/css/main.f423d6bc.css",
+    "main.js": "/pixel-art-tool/static/js/main.2225c9d5.js",
+    "index.html": "/pixel-art-tool/index.html",
+    "main.f423d6bc.css.map": "/pixel-art-tool/static/css/main.f423d6bc.css.map",
+    "main.2225c9d5.js.map": "/pixel-art-tool/static/js/main.2225c9d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f423d6bc.css",
+    "static/js/main.2225c9d5.js"
+  ]
+}
