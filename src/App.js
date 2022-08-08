@@ -2,7 +2,6 @@ import React, { useState, useMemo, useRef } from "react";
 import useStyles from "./App.styles";
 import Grid from "./Components/Grid";
 import ColorPicker from "./Components/ColorPicker";
-import html2canvas from "html2canvas";
 
 const offCell = {
   on: false,
@@ -20,33 +19,10 @@ function App() {
     [cells]
   );
 
-  const gridRef = useRef();
-
-  const handleClick = async () => {
-    const element = gridRef.current();
-    const capturedElement = await html2canvas(element);
-    const data = capturedElement.toDataURL("image/jpg");
-    const link = document.createElement("a");
-
-    if (typeof link.download === "string") {
-      link.href = data;
-      link.download = "image.jpg";
-
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
-      window.open(data);
-    }
-  };
-
   return (
     <div className={classes.app}>
       <Grid cells={cells} setCells={setCells} currentColor={currentColor} />
-      <div>
-        <ColorPicker currentColor={currentColor} onSetColor={setCurrentColor} />
-        <button onClick={handleClick}>Save</button>
-      </div>
+      <ColorPicker currentColor={currentColor} onSetColor={setCurrentColor} />
       <div className={classes.colorSwatchContainer}>
         {colorSwatch.map((color) => (
           <div
